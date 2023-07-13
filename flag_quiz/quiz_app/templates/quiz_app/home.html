@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="quiz_form">
+<img src="{{guessed_country.image.url}}" style="width: 350px; height: 230px"><br>
+<br>
+{% for country_to_guess in countries_to_guess %}
+<button type="button" style="width: 350px" class="btn btn-dark">{{country_to_guess}}</button><br><br>
+{% endfor %}
+    </div>
+</body>
+</html>
