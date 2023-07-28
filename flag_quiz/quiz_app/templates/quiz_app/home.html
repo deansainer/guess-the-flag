@@ -8,12 +8,16 @@
     <title>Title</title>
 </head>
 <body>
+<form action="" method="post">
+    {% csrf_token %}
 <div class="quiz_form">
 <img src="{{guessed_country.image.url}}" style="width: 350px; height: 230px"><br>
 <br>
 {% for country_to_guess in countries_to_guess %}
-<button type="button" style="width: 350px" class="btn btn-dark">{{country_to_guess}}</button><br><br>
+<button type="submit" name="{{country_to_guess}}" style="width: 350px" class="btn btn-dark">{{country_to_guess}}</button><br><br>
 {% endfor %}
     </div>
+    </form>
+<h1>{{result}}</h1>
 </body>
 </html>
