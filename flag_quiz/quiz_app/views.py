@@ -16,7 +16,13 @@ def home(request):
         # Store the updated 'result' value in the session
         request.session['result'] = result
 
+    if 'clear' in request.POST:
+        result = 0
+        # Store the updated 'result' value in the session
+        request.session['result'] = result
+
     countries_to_guess = random.sample(list(countries), 3)
+
     if guessed_country not in countries_to_guess:
         countries_to_guess[-1] = guessed_country
         random.shuffle(countries_to_guess)
